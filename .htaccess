@@ -15,7 +15,7 @@ RewriteRule ^index\.html$ https://kvalia.band/ [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html
+RewriteRule ^(.*)$ $1.html [NC]
 
 ErrorDocument 401 http://kvalia.band/error.html
 ErrorDocument 403 http://kvalia.band/error.html
