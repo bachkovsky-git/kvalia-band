@@ -10,12 +10,15 @@ RewriteRule ^(.*)$ http://kvalia.band/$1 [L,R=301]
 RewriteCond %{HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://kvalia.band/ [R=301,L]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+#RewriteRule ^index\.html$ https://kvalia.band/ [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ $1.html [NC]
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ $1.html [NC]
+
+RewriteRule index index.html [NC]
+RewriteRule giggls2022 giggls2022.html [NC]
 
 ErrorDocument 401 http://kvalia.band/error.html
 ErrorDocument 403 http://kvalia.band/error.html
